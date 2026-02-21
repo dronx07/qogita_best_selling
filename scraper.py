@@ -1,11 +1,11 @@
 import asyncio
 import logging
 import json
+import os
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
 from core.login import QogitaLogin
 from core.requester import Requester
-from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
@@ -19,78 +19,69 @@ JSON_FILE = "products.json"
 
 
 async def qogita_scraper():
-    logger.info("Starting Qogita scraper")
-
     product_data = []
     existing_gtins = set()
 
-    try:
-        logger.info("Initializing login process")
-        automation = QogitaLogin(
-            email=os.getenv("QOGITA_EMAIL"),
-            password=os.getenv("QOGITA_PASSWORD"),
-            headless=True,
-        )
-        cookie = await automation.login()
-        logger.info("Login successful")
+    login = QogitaLogin(
+        email=os.getenv("QOGITA_EMAIL"),
+        password=os.getenv("QOGITA_PASSWORD"),
+        headless=True,
+    )
 
-        with open("cookie.txt", "w", encoding="utf-8") as f:
-            f.write(cookie)
-            
-    except Exception as e:
-        logger.exception(f"Login failed: {e}")
-        return
+    cookies = await login.login()
 
-    for page in range(1, 142):
-        logger.info(f"Scraping page {page}")
+    async with Requester(
+        referrer="https://www.qogita.com/categories/",
+        cookies=cookies,
+        proxy=os.getenv("PROXY"),
+    ) as session:
 
-        try:
-            async with Requester(
-                url=f"https://www.qogita.com/categories/?size=72&page={page}",
-                cookie=cookie,
-                proxy=os.getenv("PROXY"),
-                referrer="https://www.qogita.com/categories/",
-            ) as session:
+        page = 1
 
-                html = await session.fetch_get()
-                soup = BeautifulSoup(html.text, "lxml")
+        while True:
+            url = f"https://www.qogita.com/categories/?size=72&page={page}"
+            logger.info(f"Scraping page {page}")
 
-                names = soup.find_all("a", class_="line-clamp-2")
-                prices = soup.find_all(
-                    "span",
-                    class_="whitespace-nowrap font-figtree text-lg font-semibold text-gray-900",
-                )
-                gtins = soup.find_all(
-                    "p",
-                    attrs={"data-dd-action-name": "Product Card GTIN"},
-                )
+            response = await session.fetch_get(url)
 
-                logger.info(
-                    f"Found {len(names)} names, {len(prices)} prices, {len(gtins)} GTINs"
-                )
+            if response.status_code != 200:
+                break
 
-                for name, price, gtin in zip(names, prices, gtins):
-                    product_gtin = gtin.text.strip()
-                    if product_gtin in existing_gtins:
-                        continue
+            soup = BeautifulSoup(response.text, "lxml")
 
-                    data = {
+            names = soup.find_all("a", class_="line-clamp-2")
+            prices = soup.find_all(
+                "span",
+                class_="whitespace-nowrap font-figtree text-lg font-semibold text-gray-900",
+            )
+            gtins = soup.find_all(
+                "p",
+                attrs={"data-dd-action-name": "Product Card GTIN"},
+            )
+
+            if not names:
+                break
+
+            for name, price, gtin in zip(names, prices, gtins):
+                product_gtin = gtin.text.strip()
+                if product_gtin in existing_gtins:
+                    continue
+
+                product_data.append(
+                    {
                         "product_name": name.text.strip(),
                         "product_gtin": product_gtin,
                         "supplier_price": price.text.strip(),
                     }
+                )
+                existing_gtins.add(product_gtin)
 
-                    product_data.append(data)
-                    existing_gtins.add(product_gtin)
-
-        except Exception as e:
-            logger.exception(f"Error on page {page}: {e}")
-            continue
+            page += 1
 
     with open(JSON_FILE, "w", encoding="utf-8") as f:
         json.dump(product_data, f, ensure_ascii=False, indent=4)
 
-    logger.info(f"Scraping finished. Total unique products: {len(product_data)}")
+    logger.info(f"Finished. Total products: {len(product_data)}")
 
 
 if __name__ == "__main__":
