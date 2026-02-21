@@ -21,15 +21,8 @@ JSON_FILE = "products.json"
 async def qogita_scraper():
     logger.info("Starting Qogita scraper")
 
-    if os.path.exists(JSON_FILE):
-        with open(JSON_FILE, "r", encoding="utf-8") as f:
-            product_data = json.load(f)
-        logger.info(f"Loaded {len(product_data)} existing products")
-
-        existing_gtins = {product["product_gtin"] for product in product_data}
-    else:
-        product_data = []
-        existing_gtins = set()
+    product_data = []
+    existing_gtins = set()
 
     try:
         logger.info("Initializing login process")
@@ -40,6 +33,10 @@ async def qogita_scraper():
         )
         cookie = await automation.login()
         logger.info("Login successful")
+
+        with open("cookie.txt", "w", encoding="utf-8") as f:
+            f.write(cookie)
+            
     except Exception as e:
         logger.exception(f"Login failed: {e}")
         return
@@ -49,7 +46,7 @@ async def qogita_scraper():
 
         try:
             async with Requester(
-                url="https://www.qogita.com/categories/?size=72&page={}".format(page),
+                url=f"https://www.qogita.com/categories/?size=72&page={page}",
                 cookie=cookie,
                 proxy=os.getenv("PROXY"),
                 referrer="https://www.qogita.com/categories/",
@@ -72,11 +69,8 @@ async def qogita_scraper():
                     f"Found {len(names)} names, {len(prices)} prices, {len(gtins)} GTINs"
                 )
 
-                new_products_count = 0
-
                 for name, price, gtin in zip(names, prices, gtins):
                     product_gtin = gtin.text.strip()
-
                     if product_gtin in existing_gtins:
                         continue
 
@@ -88,18 +82,13 @@ async def qogita_scraper():
 
                     product_data.append(data)
                     existing_gtins.add(product_gtin)
-                    new_products_count += 1
-
-                with open(JSON_FILE, "w", encoding="utf-8") as f:
-                    json.dump(product_data, f, ensure_ascii=False, indent=4)
-
-                logger.info(
-                    f"Saved {new_products_count} NEW products from page {page}"
-                )
 
         except Exception as e:
             logger.exception(f"Error on page {page}: {e}")
             continue
+
+    with open(JSON_FILE, "w", encoding="utf-8") as f:
+        json.dump(product_data, f, ensure_ascii=False, indent=4)
 
     logger.info(f"Scraping finished. Total unique products: {len(product_data)}")
 
