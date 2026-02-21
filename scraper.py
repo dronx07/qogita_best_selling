@@ -23,10 +23,10 @@ async def scrape_page(page, cookie, semaphore, existing_gtins):
     async with semaphore:
         try:
             async with Requester(
-                url=os.getenv("QOGITA_URL").format(page),
+                url="https://www.qogita.com/categories/?size=72&page={}".format(page),
                 cookie=cookie,
                 proxy=os.getenv("PROXY"),
-                referrer=os.getenv("QOGITA_REFERRER"),
+                referrer="https://www.qogita.com/categories/",
             ) as session:
 
                 html = await session.fetch_get()
