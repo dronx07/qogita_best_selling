@@ -2,8 +2,8 @@ import asyncio
 import logging
 import json
 from bs4 import BeautifulSoup
-from core.login import QogitaLogin
-from core.requester import Requester
+from .core.login import QogitaLogin
+from .core.requester import Requester
 from dotenv import load_dotenv
 import os
 
