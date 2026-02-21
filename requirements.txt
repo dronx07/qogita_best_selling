@@ -2,3 +2,4 @@ playwright
 curl_cffi
 bs4
 python-dotenv
+lxml
