@@ -22,13 +22,23 @@ async def qogita_scraper():
     product_data = []
     existing_gtins = set()
 
+    email = os.getenv("QOGITA_EMAIL")
+    password = os.getenv("QOGITA_PASSWORD")
+
+    if not email or not password:
+        raise ValueError("Missing QOGITA_EMAIL or QOGITA_PASSWORD in .env")
+
     login = QogitaLogin(
-        email=os.getenv("QOGITA_EMAIL"),
-        password=os.getenv("QOGITA_PASSWORD"),
+        email=email,
+        password=password,
         headless=True,
     )
 
+    logger.info("Logging in...")
     cookies = await login.login()
+
+    if not cookies:
+        raise RuntimeError("Login failed. No cookies returned.")
 
     async with Requester(
         referrer="https://www.qogita.com/categories/",
@@ -36,13 +46,18 @@ async def qogita_scraper():
         proxy=os.getenv("PROXY"),
     ) as session:
 
-        for i in range(1, 142):
+        for i in range(1, 5):
             url = f"https://www.qogita.com/categories/?size=72&page={i}"
             logger.info(f"Scraping page {i}")
 
-            response = await session.fetch_get(url)
+            try:
+                response = await session.fetch_get(url)
+            except Exception as e:
+                logger.error(f"Request failed on page {i}: {e}")
+                break
 
-            if response.status_code != 200:
+            if not response or response.status_code != 200:
+                logger.warning(f"Stopping. Status code: {getattr(response, 'status_code', None)}")
                 break
 
             soup = BeautifulSoup(response.text, "lxml")
@@ -58,25 +73,41 @@ async def qogita_scraper():
             )
 
             if not names:
+                logger.info("No products found. Stopping pagination.")
                 break
 
-            for name, price, gtin in zip(names, prices, gtins):
-                product_gtin = gtin.text.strip()
-                if product_gtin in existing_gtins:
+            # Ensure safe zipping (avoid silent data loss)
+            min_length = min(len(names), len(prices), len(gtins))
+
+            for idx in range(min_length):
+                name = names[idx]
+                price = prices[idx]
+                gtin = gtins[idx]
+
+                product_gtin = gtin.get_text(strip=True)
+
+                if not product_gtin or product_gtin in existing_gtins:
                     continue
 
                 product_data.append(
                     {
-                        "product_name": name.text.strip(),
+                        "product_name": name.get_text(strip=True),
                         "product_gtin": product_gtin,
-                        "supplier_price": price.text.strip(),
+                        "supplier_price": price.get_text(strip=True),
                     }
                 )
+
                 existing_gtins.add(product_gtin)
 
+            logger.info(f"Collected so far: {len(product_data)} products")
 
-    with open(JSON_FILE, "w", encoding="utf-8") as f:
-        json.dump(product_data, f, ensure_ascii=False, indent=4)
+    # Save results
+    try:
+        with open(JSON_FILE, "w", encoding="utf-8") as f:
+            json.dump(product_data, f, ensure_ascii=False, indent=4)
+    except Exception as e:
+        logger.error(f"Failed to write JSON file: {e}")
+        return
 
     logger.info(f"Finished. Total products: {len(product_data)}")
 
