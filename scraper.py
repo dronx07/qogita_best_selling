@@ -44,7 +44,7 @@ async def qogita_scraper():
         logger.exception(f"Login failed: {e}")
         return
 
-    for page in range(1, 3):
+    for page in range(1, 142):
         logger.info(f"Scraping page {page}")
 
         try:
