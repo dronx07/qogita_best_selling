@@ -36,11 +36,9 @@ async def qogita_scraper():
         proxy=os.getenv("PROXY"),
     ) as session:
 
-        page = 1
-
-        while True:
-            url = f"https://www.qogita.com/categories/?size=72&page={page}"
-            logger.info(f"Scraping page {page}")
+        for i in range(1, 142):
+            url = f"https://www.qogita.com/categories/?size=72&page={i}"
+            logger.info(f"Scraping page {i}")
 
             response = await session.fetch_get(url)
 
@@ -76,7 +74,6 @@ async def qogita_scraper():
                 )
                 existing_gtins.add(product_gtin)
 
-            page += 1
 
     with open(JSON_FILE, "w", encoding="utf-8") as f:
         json.dump(product_data, f, ensure_ascii=False, indent=4)
