@@ -2,7 +2,7 @@ name: Qogita Scraper
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # Runs at 00:00 UTC every day
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -26,9 +26,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install Playwright
+      - name: Install Playwright browsers
         run: |
-          playwright install chromium
+          playwright install --with-deps chromium
 
       - name: Run scraper
         env:
@@ -38,10 +38,10 @@ jobs:
         run: |
           python scraper.py
 
-      - name: Commit updated products.json and cookie.txt
+      - name: Commit updated products.json
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add products.json cookie.txt
-          git commit -m "Update products.json [auto]" || echo "No changes"
+          git add products.json || true
+          git diff --cached --quiet || git commit -m "Update products.json [auto]"
           git push
