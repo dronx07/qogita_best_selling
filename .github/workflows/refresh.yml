@@ -1,28 +1,19 @@
-name: Refresh Qogita Best Selling
+name: Qogita Scraper
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"   # Runs at 00:00 UTC every day
   workflow_dispatch:
 
-concurrency:
-  group: qogita
-  cancel-in-progress: true
-
-permissions:
-  contents: write
-
 jobs:
-  build:
+  run-scraper:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -36,21 +27,14 @@ jobs:
         env:
           QOGITA_EMAIL: ${{ secrets.QOGITA_EMAIL }}
           QOGITA_PASSWORD: ${{ secrets.QOGITA_PASSWORD }}
-          QOGITA_URL: ${{ secrets.QOGITA_URL }}
-          QOGITA_REFERRER: ${{ secrets.QOGITA_REFERRER }}
           PROXY: ${{ secrets.PROXY }}
-        run: python scraper.py
-
-      - name: Commit and push if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          python scraper.py
 
+      - name: Commit updated products.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add products.json
-
-          if git diff --cached --quiet; then
-            echo "No changes"
-          else
-            git commit -m "Update products"
-            git push
-          fi
+          git commit -m "Update products.json [auto]" || echo "No changes"
+          git push
