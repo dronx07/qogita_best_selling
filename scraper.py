@@ -16,37 +16,11 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 JSON_FILE = "products.json"
+MAX_CONCURRENT_REQUESTS = 10
 
 
-async def qogita_scraper():
-    logger.info("Starting Qogita scraper")
-
-    if os.path.exists(JSON_FILE):
-        with open(JSON_FILE, "r", encoding="utf-8") as f:
-            product_data = json.load(f)
-        logger.info(f"Loaded {len(product_data)} existing products")
-
-        existing_gtins = {product["product_gtin"] for product in product_data}
-    else:
-        product_data = []
-        existing_gtins = set()
-
-    try:
-        logger.info("Initializing login process")
-        automation = QogitaLogin(
-            email=os.getenv("QOGITA_EMAIL"),
-            password=os.getenv("QOGITA_PASSWORD"),
-            headless=True,
-        )
-        cookie = await automation.login()
-        logger.info("Login successful")
-    except Exception as e:
-        logger.exception(f"Login failed: {e}")
-        return
-
-    for page in range(1, 142):
-        logger.info(f"Scraping page {page}")
-
+async def scrape_page(page, cookie, semaphore, existing_gtins):
+    async with semaphore:
         try:
             async with Requester(
                 url=os.getenv("QOGITA_URL").format(page),
@@ -56,7 +30,7 @@ async def qogita_scraper():
             ) as session:
 
                 html = await session.fetch_get()
-                soup = BeautifulSoup(html.text, "html.parser")
+                soup = BeautifulSoup(html.text, "lxml")
 
                 names = soup.find_all("a", class_="line-clamp-2")
                 prices = soup.find_all(
@@ -68,11 +42,7 @@ async def qogita_scraper():
                     attrs={"data-dd-action-name": "Product Card GTIN"},
                 )
 
-                logger.info(
-                    f"Found {len(names)} names, {len(prices)} prices, {len(gtins)} GTINs"
-                )
-
-                new_products_count = 0
+                new_products = []
 
                 for name, price, gtin in zip(names, prices, gtins):
                     product_gtin = gtin.text.strip()
@@ -80,28 +50,55 @@ async def qogita_scraper():
                     if product_gtin in existing_gtins:
                         continue
 
-                    data = {
-                        "product_name": name.text.strip(),
-                        "product_gtin": product_gtin,
-                        "supplier_price": price.text.strip(),
-                    }
-
-                    product_data.append(data)
                     existing_gtins.add(product_gtin)
-                    new_products_count += 1
 
-                with open(JSON_FILE, "w", encoding="utf-8") as f:
-                    json.dump(product_data, f, ensure_ascii=False, indent=4)
+                    new_products.append(
+                        {
+                            "product_name": name.text.strip(),
+                            "product_gtin": product_gtin,
+                            "supplier_price": price.text.strip(),
+                        }
+                    )
 
-                logger.info(
-                    f"Saved {new_products_count} NEW products from page {page}"
-                )
+                return new_products
 
-        except Exception as e:
-            logger.exception(f"Error on page {page}: {e}")
-            continue
+        except Exception:
+            return []
 
-    logger.info(f"Scraping finished. Total unique products: {len(product_data)}")
+
+async def qogita_scraper():
+    if os.path.exists(JSON_FILE):
+        with open(JSON_FILE, "r", encoding="utf-8") as f:
+            product_data = json.load(f)
+        existing_gtins = {p["product_gtin"] for p in product_data}
+    else:
+        product_data = []
+        existing_gtins = set()
+
+    try:
+        automation = QogitaLogin(
+            email=os.getenv("QOGITA_EMAIL"),
+            password=os.getenv("QOGITA_PASSWORD"),
+            headless=True,
+        )
+        cookie = await automation.login()
+    except Exception:
+        return
+
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
+
+    tasks = [
+        scrape_page(page, cookie, semaphore, existing_gtins)
+        for page in range(1, 142)
+    ]
+
+    results = await asyncio.gather(*tasks)
+
+    for page_products in results:
+        product_data.extend(page_products)
+
+    with open(JSON_FILE, "w", encoding="utf-8") as f:
+        json.dump(product_data, f, ensure_ascii=False, indent=4)
 
 
 if __name__ == "__main__":
