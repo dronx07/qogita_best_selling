@@ -46,7 +46,7 @@ async def qogita_scraper():
         proxy=os.getenv("PROXY"),
     ) as session:
 
-        for i in range(1, 5):
+        for i in range(1, 142):
             url = f"https://www.qogita.com/categories/?size=72&page={i}"
             logger.info(f"Scraping page {i}")
 
