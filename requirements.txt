@@ -3,3 +3,4 @@ httpx
 bs4
 python-dotenv
 lxml
+httpx[http2]
