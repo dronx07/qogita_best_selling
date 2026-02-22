@@ -1,4 +1,5 @@
-import httpx
+from curl_cffi.requests import AsyncSession
+from curl_cffi import Response
 from typing import Optional
 
 
@@ -9,38 +10,32 @@ class Requester:
         cookies: Optional[dict] = None,
         proxy: Optional[str] = None,
     ) -> None:
-        self.client: httpx.AsyncClient | None = None
+        self.session: AsyncSession | None = None
         self.cookies = cookies or {}
         self.proxy = proxy
-
         self.headers = {
             "Accept": "*/*",
             "Accept-Encoding": "gzip, deflate, br",
             "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
-            "User-Agent": (
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/142.0.0.0 Safari/537.36"
-            ),
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
             "Referer": referrer,
         }
 
     async def __aenter__(self):
-        self.client = httpx.AsyncClient(
+        self.session = AsyncSession(
+            impersonate="chrome142",
+            http_version="v2",
+            allow_redirects=True,
             headers=self.headers,
-            cookies=self.cookies,
             proxy=self.proxy,
-            http2=True,
-            follow_redirects=True,
-            timeout=httpx.Timeout(30.0),
         )
+        await self.session.__aenter__()
+        self.session.cookies.update(self.cookies)
         return self
 
     async def __aexit__(self, exc_type, exc, tb):
-        if self.client:
-            await self.client.aclose()
+        if self.session:
+            await self.session.__aexit__(exc_type, exc, tb)
 
-    async def fetch_get(self, url: str) -> Optional[httpx.Response]:
-        if not self.client:
-            raise RuntimeError("Client not initialized. Use 'async with'.")
-        return await self.client.get(url)
+    async def fetch_get(self, url: str) -> Optional[Response]:
+        return await self.session.get(url)
