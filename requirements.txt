@@ -1,5 +1,5 @@
 playwright
-curl_cffi
+httpx
 bs4
 python-dotenv
 lxml
