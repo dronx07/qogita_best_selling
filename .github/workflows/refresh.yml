@@ -42,6 +42,11 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add products.json || true
-          git diff --cached --quiet || git commit -m "Update products.json [auto]"
+          
+          # Ensure the temp file was written and is renamed
+          if [ -f products.json ]; then
+            git add products.json  # Add the updated products.json to commit
+          fi          git diff --cached --quiet || git commit -m "Update products.json [auto]"  
+          
+          # Push the changes back to the repository
           git push
