@@ -16,6 +16,58 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 JSON_FILE = "products.json"
+BASE_URL = "https://www.qogita.com/categories/?size=72&page={}"
+MAX_CONCURRENT = 10
+
+
+async def scrape_page(page: int, session: Requester, semaphore: asyncio.Semaphore):
+    url = BASE_URL.format(page)
+
+    async with semaphore:
+        try:
+            response = await session.fetch_get(url)
+        except Exception as e:
+            logger.error(f"Request failed on page {page}: {e}")
+            return []
+
+        if not response or response.status_code != 200:
+            logger.warning(f"Page {page} returned {getattr(response, 'status_code', None)}")
+            return []
+
+        soup = BeautifulSoup(response.text, "lxml")
+
+        names = soup.find_all("a", class_="line-clamp-2")
+        prices = soup.find_all(
+            "span",
+            class_="whitespace-nowrap font-figtree text-lg font-semibold text-gray-900",
+        )
+        gtins = soup.find_all(
+            "p",
+            attrs={"data-dd-action-name": "Product Card GTIN"},
+        )
+
+        if not names:
+            logger.info(f"No products found on page {page}")
+            return []
+
+        min_length = min(len(names), len(prices), len(gtins))
+        page_products = []
+
+        for idx in range(min_length):
+            product_gtin = gtins[idx].get_text(strip=True)
+            if not product_gtin:
+                continue
+
+            page_products.append(
+                {
+                    "product_name": names[idx].get_text(strip=True),
+                    "product_gtin": product_gtin,
+                    "supplier_price": prices[idx].get_text(strip=True),
+                }
+            )
+
+        logger.info(f"Page {page} scraped ({len(page_products)} items)")
+        return page_products
 
 
 async def qogita_scraper():
@@ -40,65 +92,28 @@ async def qogita_scraper():
     if not cookies:
         raise RuntimeError("Login failed. No cookies returned.")
 
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT)
+
     async with Requester(
         referrer="https://www.qogita.com/categories/",
         cookies=cookies,
         proxy=os.getenv("PROXY"),
     ) as session:
 
-        for i in range(1, 142):
-            url = f"https://www.qogita.com/categories/?size=72&page={i}"
-            logger.info(f"Scraping page {i}")
+        tasks = [
+            scrape_page(page, session, semaphore)
+            for page in range(1, 142)
+        ]
 
-            try:
-                response = await session.fetch_get(url)
-            except Exception as e:
-                logger.error(f"Request failed on page {i}: {e}")
-                break
+        results = await asyncio.gather(*tasks)
 
-            if not response or response.status_code != 200:
-                logger.warning(f"Stopping. Status code: {getattr(response, 'status_code', None)}")
-                break
-
-            soup = BeautifulSoup(response.text, "lxml")
-
-            names = soup.find_all("a", class_="line-clamp-2")
-            prices = soup.find_all(
-                "span",
-                class_="whitespace-nowrap font-figtree text-lg font-semibold text-gray-900",
-            )
-            gtins = soup.find_all(
-                "p",
-                attrs={"data-dd-action-name": "Product Card GTIN"},
-            )
-
-            if not names:
-                logger.info("No products found. Stopping pagination.")
-                break
-
-            min_length = min(len(names), len(prices), len(gtins))
-
-            for idx in range(min_length):
-                name = names[idx]
-                price = prices[idx]
-                gtin = gtins[idx]
-
-                product_gtin = gtin.get_text(strip=True)
-
-                if not product_gtin or product_gtin in existing_gtins:
+        for page_products in results:
+            for product in page_products:
+                gtin = product["product_gtin"]
+                if gtin in existing_gtins:
                     continue
-
-                product_data.append(
-                    {
-                        "product_name": name.get_text(strip=True),
-                        "product_gtin": product_gtin,
-                        "supplier_price": price.get_text(strip=True),
-                    }
-                )
-
-                existing_gtins.add(product_gtin)
-
-            logger.info(f"Collected so far: {len(product_data)} products")
+                existing_gtins.add(gtin)
+                product_data.append(product)
 
     try:
         with open(JSON_FILE, "w", encoding="utf-8") as f:
