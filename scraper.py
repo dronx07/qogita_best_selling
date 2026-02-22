@@ -17,57 +17,56 @@ logger = logging.getLogger(__name__)
 
 JSON_FILE = "products.json"
 BASE_URL = "https://www.qogita.com/categories/?size=72&page={}"
-MAX_CONCURRENT = 10
 
 
-async def scrape_page(page: int, session: Requester, semaphore: asyncio.Semaphore):
+async def scrape_page(page: int, session: Requester):
     url = BASE_URL.format(page)
+    logger.info(f"Scraping page {page}...")
 
-    async with semaphore:
-        try:
-            response = await session.fetch_get(url)
-        except Exception as e:
-            logger.error(f"Request failed on page {page}: {e}")
-            return []
+    try:
+        response = await session.fetch_get(url)
+    except Exception as e:
+        logger.error(f"Request failed on page {page}: {e}")
+        return []
 
-        if not response or response.status_code != 200:
-            logger.warning(f"Page {page} returned {getattr(response, 'status_code', None)}")
-            return []
+    if not response or response.status_code != 200:
+        logger.warning(f"Page {page} returned {getattr(response, 'status_code', None)}")
+        return []
 
-        soup = BeautifulSoup(response.text, "lxml")
+    soup = BeautifulSoup(response.text, "lxml")
 
-        names = soup.find_all("a", class_="line-clamp-2")
-        prices = soup.find_all(
-            "span",
-            class_="whitespace-nowrap font-figtree text-lg font-semibold text-gray-900",
+    names = soup.find_all("a", class_="line-clamp-2")
+    prices = soup.find_all(
+        "span",
+        class_="whitespace-nowrap font-figtree text-lg font-semibold text-gray-900",
+    )
+    gtins = soup.find_all(
+        "p",
+        attrs={"data-dd-action-name": "Product Card GTIN"},
+    )
+
+    if not names:
+        logger.info(f"No products found on page {page}")
+        return []
+
+    min_length = min(len(names), len(prices), len(gtins))
+    page_products = []
+
+    for idx in range(min_length):
+        product_gtin = gtins[idx].get_text(strip=True)
+        if not product_gtin:
+            continue
+
+        page_products.append(
+            {
+                "product_name": names[idx].get_text(strip=True),
+                "product_gtin": product_gtin,
+                "supplier_price": prices[idx].get_text(strip=True),
+            }
         )
-        gtins = soup.find_all(
-            "p",
-            attrs={"data-dd-action-name": "Product Card GTIN"},
-        )
 
-        if not names:
-            logger.info(f"No products found on page {page}")
-            return []
-
-        min_length = min(len(names), len(prices), len(gtins))
-        page_products = []
-
-        for idx in range(min_length):
-            product_gtin = gtins[idx].get_text(strip=True)
-            if not product_gtin:
-                continue
-
-            page_products.append(
-                {
-                    "product_name": names[idx].get_text(strip=True),
-                    "product_gtin": product_gtin,
-                    "supplier_price": prices[idx].get_text(strip=True),
-                }
-            )
-
-        logger.info(f"Page {page} scraped ({len(page_products)} items)")
-        return page_products
+    logger.info(f"Page {page} scraped ({len(page_products)} items)")
+    return page_products
 
 
 async def qogita_scraper():
@@ -92,22 +91,15 @@ async def qogita_scraper():
     if not cookies:
         raise RuntimeError("Login failed. No cookies returned.")
 
-    semaphore = asyncio.Semaphore(MAX_CONCURRENT)
-
     async with Requester(
         referrer="https://www.qogita.com/categories/",
         cookies=cookies,
         proxy=os.getenv("PROXY"),
     ) as session:
 
-        tasks = [
-            scrape_page(page, session, semaphore)
-            for page in range(1, 142)
-        ]
+        for page in range(1, 142):
+            page_products = await scrape_page(page, session)
 
-        results = await asyncio.gather(*tasks)
-
-        for page_products in results:
             for product in page_products:
                 gtin = product["product_gtin"]
                 if gtin in existing_gtins:
