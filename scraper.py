@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from core.login import QogitaLogin
 from core.requester import Requester
+import shutil
 
 load_dotenv()
 
@@ -16,7 +17,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 JSON_FILE = "products.json"
-
+TEMP_JSON_FILE = "products_temp.json"
 
 async def qogita_scraper():
     product_data = []
@@ -101,14 +102,16 @@ async def qogita_scraper():
             logger.info(f"Collected so far: {len(product_data)} products")
 
     try:
-        with open(JSON_FILE, "w", encoding="utf-8") as f:
-            json.dump(product_data, f, ensure_ascii=False, indent=4)
+        with open(TEMP_JSON_FILE, "w", encoding="utf-8") as temp_file:
+            json.dump(product_data, temp_file, ensure_ascii=False, indent=4)
+
+        shutil.move(TEMP_JSON_FILE, JSON_FILE)
+        logger.info(f"Finished. Total products: {len(product_data)}")
+
     except Exception as e:
         logger.error(f"Failed to write JSON file: {e}")
-        return
-
-    logger.info(f"Finished. Total products: {len(product_data)}")
-
+        if os.path.exists(TEMP_JSON_FILE):
+            os.remove(TEMP_JSON_FILE)
 
 if __name__ == "__main__":
     asyncio.run(qogita_scraper())
