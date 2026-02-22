@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from core.login import QogitaLogin
 from core.requester import Requester
-import shutil
 
 load_dotenv()
 
@@ -17,7 +16,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 JSON_FILE = "products.json"
-TEMP_JSON_FILE = "products_temp.json"
+
 async def qogita_scraper():
     product_data = []
     existing_gtins = set()
@@ -46,7 +45,7 @@ async def qogita_scraper():
         proxy=os.getenv("PROXY"),
     ) as session:
 
-        for i in range(1, 142):
+        for i in range(1, 5):
             url = f"https://www.qogita.com/categories/?size=72&page={i}"
             logger.info(f"Scraping page {i}")
 
@@ -88,11 +87,16 @@ async def qogita_scraper():
                 if not product_gtin or product_gtin in existing_gtins:
                     continue
 
+                product_link = name.get("href")
+                if product_link and product_link.startswith("/"):
+                    product_link = f"https://www.qogita.com{product_link}"
+
                 product_data.append(
                     {
                         "product_name": name.get_text(strip=True),
                         "product_gtin": product_gtin,
                         "supplier_price": price.get_text(strip=True),
+                        "product_link": product_link,
                     }
                 )
 
@@ -101,16 +105,11 @@ async def qogita_scraper():
             logger.info(f"Collected so far: {len(product_data)} products")
 
     try:
-        with open(TEMP_JSON_FILE, "w", encoding="utf-8") as temp_file:
-            json.dump(product_data, temp_file, ensure_ascii=False, indent=4)
-
-        shutil.move(TEMP_JSON_FILE, JSON_FILE)
+        with open(JSON_FILE, "w", encoding="utf-8") as file:
+            json.dump(product_data, file, ensure_ascii=False, indent=4)
         logger.info(f"Finished. Total products: {len(product_data)}")
-
     except Exception as e:
         logger.error(f"Failed to write JSON file: {e}")
-        if os.path.exists(TEMP_JSON_FILE):
-            os.remove(TEMP_JSON_FILE)
 
 if __name__ == "__main__":
     asyncio.run(qogita_scraper())
