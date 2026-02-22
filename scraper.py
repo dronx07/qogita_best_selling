@@ -18,7 +18,6 @@ logger = logging.getLogger(__name__)
 
 JSON_FILE = "products.json"
 TEMP_JSON_FILE = "products_temp.json"
-
 async def qogita_scraper():
     product_data = []
     existing_gtins = set()
