@@ -76,7 +76,6 @@ async def qogita_scraper():
                 logger.info("No products found. Stopping pagination.")
                 break
 
-            # Ensure safe zipping (avoid silent data loss)
             min_length = min(len(names), len(prices), len(gtins))
 
             for idx in range(min_length):
@@ -101,7 +100,6 @@ async def qogita_scraper():
 
             logger.info(f"Collected so far: {len(product_data)} products")
 
-    # Save results
     try:
         with open(JSON_FILE, "w", encoding="utf-8") as f:
             json.dump(product_data, f, ensure_ascii=False, indent=4)
