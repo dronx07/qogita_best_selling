@@ -29,7 +29,7 @@ class Requester:
         self.client = httpx.AsyncClient(
             headers=self.headers,
             cookies=self.cookies,
-            proxies=self.proxy,
+            proxy=self.proxy,
             http2=True,
             follow_redirects=True,
             timeout=httpx.Timeout(30.0),
