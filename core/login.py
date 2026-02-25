@@ -22,8 +22,8 @@ class QogitaLogin:
             await page.fill("input[type='email']", self.email)
             await page.fill("input[type='password']", self.password)
             await page.click("button[type='submit']")
-            await page.wait_for_load_state("networkidle")
-            await asyncio.sleep(5)
+            await page.wait_for_load_state("laod")
+            await asyncio.sleep(30)
 
             cookies = await context.cookies()
             await browser.close()
