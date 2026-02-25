@@ -62,7 +62,7 @@ async def qogita_scraper():
             soup = BeautifulSoup(response.text, "lxml")
 
             names = soup.find_all("a", class_="line-clamp-2 rounded-sm font-light text-gray-900 underline decoration-transparent transition-colors delay-100 duration-300 ease-in-out group-hover/card:decoration-current group-hover/links:decoration-transparent hover:decoration-current")
-            prices = soup.find_all("span", attrs={"class": "whitespace-nowrap font-figtree text-lg font-semibold text-gray-900"}
+            prices = soup.find_all("span", attrs={"class": "whitespace-nowrap font-figtree text-lg font-semibold text-gray-900"})
             gtins = soup.find_all("p", attrs={"data-dd-action-name": "Product Card GTIN"})
             brands = soup.find_all("a", attrs={"class": "font-outfit inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm disabled:cursor-not-allowed aria-disabled:cursor-not-allowed underline-offset-4 hover:text-gray-900 disabled:text-gray-500 text-base font-medium text-gray-900 underline decoration-transparent transition-colors delay-100 duration-300 ease-in-out hover:decoration-current"})
 
