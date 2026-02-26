@@ -42,6 +42,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add products.json || true
-          git diff --cached --quiet || git commit -m "Update products.json [auto]"
+          git add products.json category_state.json || true
+          git diff --cached --quiet || git commit -m "Update products and state [auto]"
           git push
