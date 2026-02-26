@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from core.login import QogitaLogin
 from core.requester import Requester
+import random
 
 load_dotenv()
 
@@ -113,6 +114,9 @@ async def qogita_scraper():
 
             logger.info(f"Collected so far: {len(product_data)} products")
             page += 1
+            delay = random.uniform(1.5, 4.0)  
+            logger.info(f"Sleeping for {delay:.2f} seconds...")
+            await asyncio.sleep(delay)
 
     try:
         with open(JSON_FILE, "w", encoding="utf-8") as file:
