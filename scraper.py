@@ -16,43 +16,59 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 JSON_FILE = "products.json"
+STATE_FILE = "category_state.json"
+
+CATEGORIES = [
+    "https://www.qogita.com/categories/health-beauty/health/?size=72&page={}",
+    "https://www.qogita.com/categories/health-beauty/body/?size=72&page={}",
+    "https://www.qogita.com/categories/health-beauty/face/?size=72&page={}",
+    "https://www.qogita.com/categories/health-beauty/hair/?size=72&page={}",
+    "https://www.qogita.com/categories/health-beauty/makeup/?size=72&page={}",
+    "https://www.qogita.com/categories/health-beauty/home-lifestyle/?size=72&page={}",
+]
+
+def load_state():
+    if not os.path.exists(STATE_FILE):
+        with open(STATE_FILE, "w") as f:
+            json.dump({"current_index": 0}, f)
+        return 0
+    with open(STATE_FILE, "r") as f:
+        data = json.load(f)
+        return data.get("current_index", 0)
+
+def save_state(index):
+    with open(STATE_FILE, "w") as f:
+        json.dump({"current_index": index}, f)
 
 async def qogita_scraper():
     product_data = []
     existing_gtins = set()
-
     email = os.getenv("QOGITA_EMAIL")
     password = os.getenv("QOGITA_PASSWORD")
 
     if not email or not password:
         raise ValueError("Missing QOGITA_EMAIL or QOGITA_PASSWORD in .env")
 
-    login = QogitaLogin(
-        email=email,
-        password=password,
-        headless=True,
-    )
-
+    login = QogitaLogin(email=email, password=password, headless=True)
     logger.info("Logging in...")
     cookies = await login.login()
 
     if not cookies:
         raise RuntimeError("Login failed. No cookies returned.")
 
-    async with Requester(
-        referrer="https://www.qogita.com/categories/",
-        cookies=cookies,
-        proxy=os.getenv("PROXY"),
-    ) as session:
+    current_index = load_state()
+    category_url_template = CATEGORIES[current_index]
+    logger.info(f"Scraping category {current_index + 1}/{len(CATEGORIES)}: {category_url_template}")
 
-        for i in range(1, 142):
-            url = f"https://www.qogita.com/categories/?size=72&page={i}"
-            logger.info(f"Scraping page {i}")
-
+    async with Requester(referrer="https://www.qogita.com/categories/", cookies=cookies, proxy=os.getenv("PROXY")) as session:
+        page = 1
+        while True:
+            url = category_url_template.format(page)
+            logger.info(f"Scraping page {page}")
             try:
                 response = await session.fetch_get(url)
             except Exception as e:
-                logger.error(f"Request failed on page {i}: {e}")
+                logger.error(f"Request failed on page {page}: {e}")
                 break
 
             if not response or response.status_code != 200:
@@ -79,7 +95,6 @@ async def qogita_scraper():
                 brand = brands[idx]
 
                 product_gtin = gtin.get_text(strip=True)
-
                 if not product_gtin or product_gtin in existing_gtins:
                     continue
 
@@ -87,19 +102,17 @@ async def qogita_scraper():
                 if product_link and product_link.startswith("/"):
                     product_link = f"https://www.qogita.com{product_link}"
 
-                product_data.append(
-                    {
-                        "product_name": name.get_text(strip=True),
-                        "product_gtin": product_gtin,
-                        "supplier_price": price.get_text(strip=True),
-                        "product_link": product_link,
-                        "brand": brand.get_text(strip=True)
-                    }
-                )
-
+                product_data.append({
+                    "product_name": name.get_text(strip=True),
+                    "product_gtin": product_gtin,
+                    "supplier_price": price.get_text(strip=True),
+                    "product_link": product_link,
+                    "brand": brand.get_text(strip=True)
+                })
                 existing_gtins.add(product_gtin)
 
             logger.info(f"Collected so far: {len(product_data)} products")
+            page += 1
 
     try:
         with open(JSON_FILE, "w", encoding="utf-8") as file:
@@ -107,6 +120,10 @@ async def qogita_scraper():
         logger.info(f"Finished. Total products: {len(product_data)}")
     except Exception as e:
         logger.error(f"Failed to write JSON file: {e}")
+
+    next_index = (current_index + 1) % len(CATEGORIES)
+    save_state(next_index)
+    logger.info(f"Next category index saved: {next_index}")
 
 if __name__ == "__main__":
     asyncio.run(qogita_scraper())
