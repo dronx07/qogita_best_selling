@@ -28,6 +28,7 @@ class Requester:
             allow_redirects=True,
             headers=self.headers,
             proxy=self.proxy,
+            timeout=60
         )
         await self.session.__aenter__()
         self.session.cookies.update(self.cookies)
