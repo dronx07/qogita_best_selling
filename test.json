@@ -1,0 +1,919 @@
+[
+    {
+        "product_name": "Lattafa Yara Candy Eau De Parfum 100ml Women Fragrance",
+        "product_gtin": "6290360599168",
+        "supplier_price": "€11.20",
+        "product_link": "https://www.qogita.com/products/ec9ee8fca2ae409a81107454e23f346c/lattafa-yara-candy-eau-de-parfum-100ml-women-fragrance/",
+        "brand": "Lattafa"
+    },
+    {
+        "product_name": "Clinique Aromatics Elixir Body Smoother 6.7 Fl Oz 200ml",
+        "product_gtin": "0020714012786",
+        "supplier_price": "€12.92",
+        "product_link": "https://www.qogita.com/products/4ERKtQ9HHR/clinique-aromatics-elixir-body-smoother-67-fl-oz-200ml/",
+        "brand": "Clinique"
+    },
+    {
+        "product_name": "Hugo Boss Boss Bottled Eau de Toilette Spray 30ml",
+        "product_gtin": "0737052351001",
+        "supplier_price": "€15.87",
+        "product_link": "https://www.qogita.com/products/5myoiZ5qjw/hugo-boss-boss-bottled-eau-de-toilette-spray-30ml/",
+        "brand": "Hugo Boss"
+    },
+    {
+        "product_name": "Paco Rabanne Fame Body Lotion 200ml For Women",
+        "product_gtin": "3349668595044",
+        "supplier_price": "€17.78",
+        "product_link": "https://www.qogita.com/products/81Z006/paco-rabanne-fame-body-lotion-200ml-for-women/",
+        "brand": "Paco Rabanne"
+    },
+    {
+        "product_name": "Elizabeth Arden Green Tea Honey Drops Body Cream 500ml",
+        "product_gtin": "0085805071387",
+        "supplier_price": "€8.34",
+        "product_link": "https://www.qogita.com/products/ENRi3662j2/elizabeth-arden-green-tea-honey-drops-body-cream-500ml/",
+        "brand": "Elizabeth Arden"
+    },
+    {
+        "product_name": "Clarins Body Smoothing Moisture Milk 400 Ml",
+        "product_gtin": "3666057220852",
+        "supplier_price": "€11.48",
+        "product_link": "https://www.qogita.com/products/00XDOP/clarins-body-smoothing-moisture-milk-400-ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Clarins Moisture Rich Body Lotion With Shea Butter - 400ml",
+        "product_gtin": "3380810458169",
+        "supplier_price": "€16.73",
+        "product_link": "https://www.qogita.com/products/9hfe83AxB2/clarins-moisture-rich-body-lotion-with-shea-butter-400ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Cerave Moisturizing Lotion Hydrating Emulsion For Body And Face 473ml",
+        "product_gtin": "3337875597395",
+        "supplier_price": "€9.83",
+        "product_link": "https://www.qogita.com/products/FZeVj2aS3S/cerave-moisturizing-lotion-hydrating-emulsion-for-body-and-face-473ml/",
+        "brand": "CeraVe"
+    },
+    {
+        "product_name": "La Rocheposay Cicaplast Barrier Repairing Cream 50ml Restorative And Protective Hand Cream",
+        "product_gtin": "3337872414145",
+        "supplier_price": "€5.15",
+        "product_link": "https://www.qogita.com/products/FHiXQAop35/la-rocheposay-cicaplast-barrier-repairing-cream-50ml-restorative-and-protective-hand-cream/",
+        "brand": "La Roche-Posay"
+    },
+    {
+        "product_name": "Clarins Jeunesse Des Mains Hand And Nail Treatment Cream 100ml",
+        "product_gtin": "3380810469585",
+        "supplier_price": "€10.93",
+        "product_link": "https://www.qogita.com/products/2L3D9W/clarins-jeunesse-des-mains-hand-and-nail-treatment-cream-100ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Cerave Renewing Foot Cream 88 Ml",
+        "product_gtin": "3337875597296",
+        "supplier_price": "€4.95",
+        "product_link": "https://www.qogita.com/products/DqH2yu8VWu/cerave-renewing-foot-cream-88-ml/",
+        "brand": "CeraVe"
+    },
+    {
+        "product_name": "Victoria's Secret LOVE SPELL Fragrance Body Mist 8.4floz /250ml",
+        "product_gtin": "0667556489965",
+        "supplier_price": "€10.90",
+        "product_link": "https://www.qogita.com/products/OD7PE0/victorias-secret-love-spell-parfume-body-mist-spray-84-oz-new-scent-b-new/",
+        "brand": "Victoria's Secret"
+    },
+    {
+        "product_name": "Amber Romance Victoria's Secret Fragrance Mist for Women 8.4 Oz",
+        "product_gtin": "0667556605020",
+        "supplier_price": "€10.38",
+        "product_link": "https://www.qogita.com/products/6K7KQE/amber-romance-victorias-secret-fragrance-mist-for-women-84-oz/",
+        "brand": "Victoria's Secret"
+    },
+    {
+        "product_name": "Biotherm Anti Drying Body Milk Moisturizing Body Lotion 400 Ml",
+        "product_gtin": "3367729117264",
+        "supplier_price": "€11.69",
+        "product_link": "https://www.qogita.com/products/Czbw7arboP/biotherm-anti-drying-body-milk-moisturizing-body-lotion-400-ml/",
+        "brand": "Biotherm"
+    },
+    {
+        "product_name": "Clarins Masvelt Advanced Body Shaping Cream 200ml",
+        "product_gtin": "3666057108570",
+        "supplier_price": "€24.95",
+        "product_link": "https://www.qogita.com/products/9fe1a58450bf44ffbfbc2193f8dd5bf5/clarins-masvelt-advanced-body-shaping-cream-200ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Sol de Janeiro Brazilian Bum Bum Cream 75ml",
+        "product_gtin": "0810912032040",
+        "supplier_price": "€13.04",
+        "product_link": "https://www.qogita.com/products/VW71XR/sol-de-janeiro-brazilian-bum-bum-cream-75ml/",
+        "brand": "Sol De Janeiro"
+    },
+    {
+        "product_name": "La Roche-Posay Lipikar Syndet Ultra-Delicate Cleansing Cream For Body 400ml",
+        "product_gtin": "3337875537315",
+        "supplier_price": "€9.32",
+        "product_link": "https://www.qogita.com/products/CopyoU7Yos/la-roche-posay-lipikar-syndet-ultra-delicate-cleansing-cream-for-body-400ml/",
+        "brand": "La Roche-Posay"
+    },
+    {
+        "product_name": "Carolina Herrera Good Girl Shower Gel 200ml",
+        "product_gtin": "8411061841655",
+        "supplier_price": "€19.12",
+        "product_link": "https://www.qogita.com/products/4DtMTE5wza/carolina-herrera-good-girl-shower-gel-200ml/",
+        "brand": "Carolina Herrera"
+    },
+    {
+        "product_name": "Clarins Multiintensive Super Restorative Balm For Abdomen And Waist 200ml",
+        "product_gtin": "3666057108594",
+        "supplier_price": "€32.36",
+        "product_link": "https://www.qogita.com/products/WLQLXD/clarins-multiintensive-super-restorative-balm-for-abdomen-and-waist-200ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Paco Rabanne Olympea Body Lotion 200ml",
+        "product_gtin": "3349668528721",
+        "supplier_price": "€16.35",
+        "product_link": "https://www.qogita.com/products/BwBwFEtbKG/paco-rabanne-olympea-body-lotion-200ml/",
+        "brand": "Paco Rabanne"
+    },
+    {
+        "product_name": "Jean Paul Gaultier Le Classique Perfumed Body Lotion 200ml",
+        "product_gtin": "8435415011372",
+        "supplier_price": "€22.12",
+        "product_link": "https://www.qogita.com/products/9wgdjaZEmJ/jean-paul-gaultier-le-classique-perfumed-body-lotion-200ml/",
+        "brand": "Jean Paul Gaultier"
+    },
+    {
+        "product_name": "Clarins Exfoliating Body Scrub 200ml",
+        "product_gtin": "3666057295928",
+        "supplier_price": "€19.41",
+        "product_link": "https://www.qogita.com/products/5feba83349674ae2a322b464746f6a08/clarins-exfoliating-body-scrub-200ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Jean Paul Gaultier Scandal Perfumed Body Lotion 200ml For Women",
+        "product_gtin": "8435415007542",
+        "supplier_price": "€17.72",
+        "product_link": "https://www.qogita.com/products/JsLTKSWw7H/jean-paul-gaultier-scandal-perfumed-body-lotion-200ml-for-women/",
+        "brand": "Jean Paul Gaultier"
+    },
+    {
+        "product_name": "Victoria's Secret Pure Seduction Fragrance Mist 250ml",
+        "product_gtin": "0667556489972",
+        "supplier_price": "€10.83",
+        "product_link": "https://www.qogita.com/products/YL7Y79/victorias-secret-pure-seduction-fragrance-mist-250ml/",
+        "brand": "Victoria's Secret"
+    },
+    {
+        "product_name": "Collistar Smart Sun Protection Protective Drops Spf 50 30 Ml",
+        "product_gtin": "8015150235006",
+        "supplier_price": "€13.39",
+        "product_link": "https://www.qogita.com/products/271N18/collistar-smart-sun-protection-protective-drops-spf-50-30-ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Nivea Nivea Cream 75ml",
+        "product_gtin": "4005808801039",
+        "supplier_price": "€1.04",
+        "product_link": "https://www.qogita.com/products/4tYxyhybnk/nivea-nivea-cream-75ml/",
+        "brand": "Nivea"
+    },
+    {
+        "product_name": "Elizabeth Arden Green Tea Energizing Bath and Shower Gel 500ml",
+        "product_gtin": "0085805066925",
+        "supplier_price": "€6.01",
+        "product_link": "https://www.qogita.com/products/Je9uHCnjkT/elizabeth-arden-green-tea-energizing-bath-and-shower-gel-500ml/",
+        "brand": "Elizabeth Arden"
+    },
+    {
+        "product_name": "Elizabeth Arden Green Tea Refreshing Body Lotion 500ml",
+        "product_gtin": "0085805071370",
+        "supplier_price": "€6.85",
+        "product_link": "https://www.qogita.com/products/7ppGpi3ftx/elizabeth-arden-green-tea-refreshing-body-lotion-500ml/",
+        "brand": "Elizabeth Arden"
+    },
+    {
+        "product_name": "Jean Paul Gaultier Classique Shower Gel 200ml",
+        "product_gtin": "8435415011402",
+        "supplier_price": "€15.20",
+        "product_link": "https://www.qogita.com/products/AwfiMxRP4R/jean-paul-gaultier-classique-shower-gel-200ml/",
+        "brand": "Jean-Paul Gaultier"
+    },
+    {
+        "product_name": "Clarins Eau Ressourante Body Spray 100ml A Soothing And Refreshing Treatment Fragrance",
+        "product_gtin": "3666057025907",
+        "supplier_price": "€25.74",
+        "product_link": "https://www.qogita.com/products/3598eea714254a7b996943ca20f35836/clarins-eau-ressourante-body-spray-100ml-a-soothing-and-refreshing-treatment-fragrance/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Jean Paul Gaultier Gaultier Divine Body Balm 200ml",
+        "product_gtin": "8435415082938",
+        "supplier_price": "€21.84",
+        "product_link": "https://www.qogita.com/products/d61edefffe5840e9a71c4483357794e2/jean-paul-gaultier-gaultier-divine-body-balm-200ml/",
+        "brand": "Jean-Paul Gaultier"
+    },
+    {
+        "product_name": "La Rocheposay Lipikar Urea 10 Body Lotion 400ml For Very Dry Rough And Scaly Skin",
+        "product_gtin": "3337875852302",
+        "supplier_price": "€11.09",
+        "product_link": "https://www.qogita.com/products/643a2884528b46ac80b7a45b00257d99/la-rocheposay-lipikar-urea-10-body-lotion-400ml-for-very-dry-rough-and-scaly-skin/",
+        "brand": "La Roche-Posay"
+    },
+    {
+        "product_name": "Calvin Klein CK ONE Body Moisturizer 250ml",
+        "product_gtin": "0088300607464",
+        "supplier_price": "€8.79",
+        "product_link": "https://www.qogita.com/products/CwMgaqNnzQ/calvin-klein-ck-one-body-cream-250-ml/",
+        "brand": "Calvin Klein"
+    },
+    {
+        "product_name": "Clarins Tonic Treatment Oil 100ml",
+        "product_gtin": "3666057031076",
+        "supplier_price": "€25.36",
+        "product_link": "https://www.qogita.com/products/L894WO/clarins-tonic-treatment-oil-100ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Clarins Body Fit Active 200ml Smoothing Body Cream",
+        "product_gtin": "3666057201158",
+        "supplier_price": "€22.99",
+        "product_link": "https://www.qogita.com/products/45162cd51d624a7dbd548221ca251507/clarins-body-fit-active-200ml-smoothing-body-cream/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Jean Paul Gaultier Scandal Shower Gel 200ml",
+        "product_gtin": "8435415007573",
+        "supplier_price": "€17.17",
+        "product_link": "https://www.qogita.com/products/CpHoEF3tdD/jean-paul-gaultier-scandal-shower-gel-200ml/",
+        "brand": "Jean-Paul Gaultier"
+    },
+    {
+        "product_name": "Dior Sauvage Shower Gel 250ml",
+        "product_gtin": "3348901553254",
+        "supplier_price": "€31.42",
+        "product_link": "https://www.qogita.com/products/2R989Y/dior-sauvage-shower-gel-250ml/",
+        "brand": "Dior"
+    },
+    {
+        "product_name": "Vichy Capital Soleil Invisible Hydrating Mist Spf 50 200 Ml",
+        "product_gtin": "3337871325770",
+        "supplier_price": "€10.93",
+        "product_link": "https://www.qogita.com/products/J9xRk5PuLN/vichy-capital-soleil-invisible-hydrating-mist-spf-50-200-ml/",
+        "brand": "Vichy"
+    },
+    {
+        "product_name": "Biotherm Biocorps Anti-Roughness Peeling Body Scrub 200ml",
+        "product_gtin": "3614274156959",
+        "supplier_price": "€15.82",
+        "product_link": "https://www.qogita.com/products/eea5b2e7f7fd4d3e8675f9361a5add6e/biotherm-biocorps-anti-roughness-peeling-body-scrub-200ml/",
+        "brand": "Biotherm"
+    },
+    {
+        "product_name": "Clarins Contour Treatment Oil 100ml",
+        "product_gtin": "3666057031182",
+        "supplier_price": "€25.27",
+        "product_link": "https://www.qogita.com/products/VXDY60/clarins-contour-treatment-oil-100ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Clarins Fermete Body Lift Firming Cream 200 Ml For Youthful Appearance Of The Body",
+        "product_gtin": "3666057035975",
+        "supplier_price": "€25.75",
+        "product_link": "https://www.qogita.com/products/X2YL8D/clarins-fermete-body-lift-firming-cream-200-ml-for-youthful-appearance-of-the-body/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "La Rocheposay Lipikar Gel Lavant Soothing And Protective Shower Gel",
+        "product_gtin": "3337872418785",
+        "supplier_price": "€6.68",
+        "product_link": "https://www.qogita.com/products/3kVcpcS6HP/la-rocheposay-lipikar-gel-lavant-soothing-and-protective-shower-gel/",
+        "brand": "La Roche-Posay"
+    },
+    {
+        "product_name": "Clarins Men Super Moisture Balm 50ml",
+        "product_gtin": "3666057003417",
+        "supplier_price": "€18.25",
+        "product_link": "https://www.qogita.com/products/8L6WYV/clarins-men-super-moisture-balm-50ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Clarins Moisture Rich Body Lotion 200ml",
+        "product_gtin": "3380810458152",
+        "supplier_price": "€17.83",
+        "product_link": "https://www.qogita.com/products/9L7CT4QwfV/clarins-moisture-rich-body-lotion-200ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Rochas Eau De Rochas Bath & Shower Gel 500ml",
+        "product_gtin": "3386460077019",
+        "supplier_price": "€13.47",
+        "product_link": "https://www.qogita.com/products/4VZS4vaHXz/rochas-eau-de-rochas-bath-shower-gel-500ml/",
+        "brand": "Rochas"
+    },
+    {
+        "product_name": "Cerave Reparative Hand Cream For Very Dry Skin 50ml",
+        "product_gtin": "3337875597319",
+        "supplier_price": "€3.87",
+        "product_link": "https://www.qogita.com/products/4VHkQjTCBY/cerave-reparative-hand-cream-for-very-dry-skin-50ml/",
+        "brand": "CeraVe"
+    },
+    {
+        "product_name": "Avne Cicalfate Hand Cream 100ml Restorative Barrier Effect",
+        "product_gtin": "3282779416139",
+        "supplier_price": "€7.44",
+        "product_link": "https://www.qogita.com/products/G9tNXZRu3m/avne-cicalfate-hand-cream-100ml-restorative-barrier-effect/",
+        "brand": "Avène"
+    },
+    {
+        "product_name": "Victoria's Secret Aqua Kiss Fragrance Body Mist 250ml",
+        "product_gtin": "0667556605006",
+        "supplier_price": "€9.83",
+        "product_link": "https://www.qogita.com/products/EXOXLK/victorias-secret-aqua-kiss-fragrance-body-mist-84-fl-oz-250-ml-new/",
+        "brand": "Victoria's Secret"
+    },
+    {
+        "product_name": "Collistar Anti Stretch Marks Concentrate With Hyaluronic Acid 150ml",
+        "product_gtin": "8015150252881",
+        "supplier_price": "€11.95",
+        "product_link": "https://www.qogita.com/products/7geAJ78ydA/collistar-anti-stretch-marks-concentrate-with-hyaluronic-acid-150ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Tocobo Bio Watery Sun Cream Spf50 Pa++++ - 50ml",
+        "product_gtin": "8809835060058",
+        "supplier_price": "€5.67",
+        "product_link": "https://www.qogita.com/products/2ZNK33/tocobo-bio-watery-sun-cream-spf50-pa-50ml/",
+        "brand": "Tocobo"
+    },
+    {
+        "product_name": "Biotherm Age Delaying Hand & Nail Treatment 100ml",
+        "product_gtin": "3367729181142",
+        "supplier_price": "€6.99",
+        "product_link": "https://www.qogita.com/products/3M93ZkT35d/biotherm-age-delaying-hand-nail-treatment-100ml/",
+        "brand": "Biotherm"
+    },
+    {
+        "product_name": "Nivea Nivea Creme 250ml Intense Cream",
+        "product_gtin": "4005808801053",
+        "supplier_price": "€2.38",
+        "product_link": "https://www.qogita.com/products/GFPwjn7Q3U/nivea-nivea-creme-250ml-intense-cream/",
+        "brand": "Nivea"
+    },
+    {
+        "product_name": "Dove Beautifying Creamy Liquid Soap With Cucumber And Green Tea Scent Go Fresh Fresh Touch Refill",
+        "product_gtin": "8717163097700",
+        "supplier_price": "€1.08",
+        "product_link": "https://www.qogita.com/products/3M5eDN8ZGY/dove-beautifying-creamy-liquid-soap-with-cucumber-and-green-tea-scent-go-fresh-fresh-touch-refill/",
+        "brand": "Dove"
+    },
+    {
+        "product_name": "Avne Cicalfate Repairing Protective Cream 100ml",
+        "product_gtin": "3282770204681",
+        "supplier_price": "€10.65",
+        "product_link": "https://www.qogita.com/products/9v7jrwEfRR/avne-cicalfate-repairing-protective-cream-100ml/",
+        "brand": "Avène"
+    },
+    {
+        "product_name": "Vichy Capital Soleil Solar Protective Water Spf 50 Hydrating Spray For Sunbathing 200 Ml",
+        "product_gtin": "3337875695145",
+        "supplier_price": "€10.64",
+        "product_link": "https://www.qogita.com/products/AdkoPALasm/vichy-capital-soleil-solar-protective-water-spf-50-hydrating-spray-for-sunbathing-200-ml/",
+        "brand": "Vichy"
+    },
+    {
+        "product_name": "Clarins Tonic Sugar Polisher 250g With Essential Oils",
+        "product_gtin": "3666057031380",
+        "supplier_price": "€20.58",
+        "product_link": "https://www.qogita.com/products/2RL4N8/clarins-tonic-sugar-polisher-250g-with-essential-oils/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Clarins Relax Treatment Oil 100ml",
+        "product_gtin": "3666057031137",
+        "supplier_price": "€25.56",
+        "product_link": "https://www.qogita.com/products/3RD502/clarins-relax-treatment-oil-100ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Calvin Klein Contradiction 3.4oz Women's Eau de Parfum",
+        "product_gtin": "0088300602513",
+        "supplier_price": "€18.09",
+        "product_link": "https://www.qogita.com/products/DkrEtDgFrr/calvin-klein-contradiction-34oz-womens-eau-de-parfum/",
+        "brand": "Calvin Klein"
+    },
+    {
+        "product_name": "Sol de Janeiro Delicia Drench Body Butter 8.10 Ounce",
+        "product_gtin": "0810912034853",
+        "supplier_price": "€28.14",
+        "product_link": "https://www.qogita.com/products/801b48a9502d43eb8ff65b2c8d7b013d/sol-de-janeiro-delicia-drench-body-butter-810-ounce/",
+        "brand": "Sol De Janeiro"
+    },
+    {
+        "product_name": "Tocobo Cotton Soft Sun Stick Spf50+ Pa++++ - 19g",
+        "product_gtin": "8809835060041",
+        "supplier_price": "€6.23",
+        "product_link": "https://www.qogita.com/products/081488/tocobo-cotton-soft-sun-stick-spf50-pa-19g/",
+        "brand": "Tocobo"
+    },
+    {
+        "product_name": "Cosrx Oil Free Ultra Moisturizing Lotion With Birch Sap 100ml",
+        "product_gtin": "8809416470559",
+        "supplier_price": "€6.55",
+        "product_link": "https://www.qogita.com/products/W6EZ30/cosrx-oil-free-ultra-moisturizing-lotion-with-birch-sap-100ml/",
+        "brand": "Cosrx"
+    },
+    {
+        "product_name": "Uriage Barisun Dry Mist Spf 30 Very High Protection Sunscreen 200 Ml",
+        "product_gtin": "3661434005473",
+        "supplier_price": "€6.28",
+        "product_link": "https://www.qogita.com/products/9BFu7RVkVo/uriage-barisun-dry-mist-spf-30-very-high-protection-sunscreen-200-ml/",
+        "brand": "Uriage"
+    },
+    {
+        "product_name": "La Rocheposay Lipikar Cleansing Gel 1000ml",
+        "product_gtin": "3337875905480",
+        "supplier_price": "€9.17",
+        "product_link": "https://www.qogita.com/products/36ecaacfb19a4d18b7b9639f49c30e96/la-rocheposay-lipikar-cleansing-gel-1000ml/",
+        "brand": "La Roche-Posay"
+    },
+    {
+        "product_name": "Clarins Eau Dynamisante Body Spray 100ml",
+        "product_gtin": "3666057025754",
+        "supplier_price": "€24.60",
+        "product_link": "https://www.qogita.com/products/d55171836dc140d1b1905b84f8360cae/clarins-eau-dynamisante-body-spray-100ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Clarins Body Partner Stretch Mark Expert Cream 175ml",
+        "product_gtin": "3380810277807",
+        "supplier_price": "€24.02",
+        "product_link": "https://www.qogita.com/products/9uQWNj4Rzs/clarins-body-partner-stretch-mark-expert-cream-175ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Vichy Capital Soleil Hydrating Gel Aftersun Lotion 300 Ml",
+        "product_gtin": "3337871322724",
+        "supplier_price": "€10.47",
+        "product_link": "https://www.qogita.com/products/D3NnRHHEfM/vichy-capital-soleil-hydrating-gel-aftersun-lotion-300-ml/",
+        "brand": "Vichy"
+    },
+    {
+        "product_name": "Vichy Capital Soleil Sun Protection Water Spf50 200ml",
+        "product_gtin": "3337875695152",
+        "supplier_price": "€11.69",
+        "product_link": "https://www.qogita.com/products/9oocJF75wy/vichy-capital-soleil-sun-protection-water-spf50-200ml/",
+        "brand": "Vichy"
+    },
+    {
+        "product_name": "Lancaster Sun Sensitive Luminous Tan Oilfree Milky Fluid Spf 50 50 Ml",
+        "product_gtin": "3616301295396",
+        "supplier_price": "€10.72",
+        "product_link": "https://www.qogita.com/products/65xJhcNGCh/lancaster-sun-sensitive-luminous-tan-oilfree-milky-fluid-spf-50-50-ml/",
+        "brand": "Lancaster"
+    },
+    {
+        "product_name": "Dior J'Adore Les Adorables Body Milk 200ml",
+        "product_gtin": "3348901640084",
+        "supplier_price": "€41.05",
+        "product_link": "https://www.qogita.com/products/d5f7759d083849bb8aaa31d5a913e53e/dior-jadore-les-adorables-body-milk-200ml/",
+        "brand": "Dior"
+    },
+    {
+        "product_name": "Clinique Moisture Surge Body Hydrator with Aloe Bioferment and Hyaluronic Acid",
+        "product_gtin": "0192333235362",
+        "supplier_price": "€13.50",
+        "product_link": "https://www.qogita.com/products/2d9a36c9644048a2bcc59ef44d713c91/clinique-moisture-surge-body-hydrator-with-aloe-bioferment-and-hyaluronic-acid/",
+        "brand": "Clinique"
+    },
+    {
+        "product_name": "Uriage Xmose Cleansing Soothing Oil 500ml Gentle Cleansing Oil For Face And Body",
+        "product_gtin": "3661434005923",
+        "supplier_price": "€6.75",
+        "product_link": "https://www.qogita.com/products/FeYPSJw3He/uriage-xmose-cleansing-soothing-oil-500ml-gentle-cleansing-oil-for-face-and-body/",
+        "brand": "Uriage"
+    },
+    {
+        "product_name": "Collistar Body-Legs Magic Drops Self-Tanning Concentrate 125ml",
+        "product_gtin": "8015150261173",
+        "supplier_price": "€15.39",
+        "product_link": "https://www.qogita.com/products/AiRj8X6Tj7/collistar-body-legs-magic-drops-self-tanning-concentrate-125ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Clinique Aloe Shave Gel 125ml",
+        "product_gtin": "0020714673529",
+        "supplier_price": "€10.31",
+        "product_link": "https://www.qogita.com/products/6wRwKfiuwh/clinique-aloe-shave-gel-125ml/",
+        "brand": "Clinique"
+    },
+    {
+        "product_name": "Collistar Magic Drops Self Tanning Concentrate 30ml",
+        "product_gtin": "8015150261166",
+        "supplier_price": "€13.32",
+        "product_link": "https://www.qogita.com/products/KPGzCh4qMS/collistar-magic-drops-self-tanning-concentrate-30ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Adidas Active Start Shower Gel 400ml",
+        "product_gtin": "3616303459321",
+        "supplier_price": "€1.64",
+        "product_link": "https://www.qogita.com/products/533fe0414c2140de806967618a557f17/adidas-active-start-shower-gel-400ml/",
+        "brand": "adidas"
+    },
+    {
+        "product_name": "Clarins Aroma Tonic Bath & Shower Concentrate Shower Gel 200ml",
+        "product_gtin": "3666057031236",
+        "supplier_price": "€12.39",
+        "product_link": "https://www.qogita.com/products/734b4e0ecb114f2eb12bd0441db805ae/clarins-aroma-tonic-bath-shower-concentrate-shower-gel-200ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Dove Liquid Hand Wash Refill Silk with Frankincense 500ml",
+        "product_gtin": "8717163573792",
+        "supplier_price": "€1.08",
+        "product_link": "https://www.qogita.com/products/CsnKyebrxL/dove-liquid-hand-wash-refill-silk-with-frankincense-500ml/",
+        "brand": "Dove"
+    },
+    {
+        "product_name": "La Rocheposay Lipikar Baume Ap M Relipidation Balm 400 Ml",
+        "product_gtin": "3337875696548",
+        "supplier_price": "€14.16",
+        "product_link": "https://www.qogita.com/products/JB9q6KrxTS/la-rocheposay-lipikar-baume-ap-m-relipidation-balm-400-ml/",
+        "brand": "La Roche-Posay"
+    },
+    {
+        "product_name": "Clarins Eau Dynamisante Energizing Melting Body Lotion 200ml",
+        "product_gtin": "3666057025860",
+        "supplier_price": "€18.77",
+        "product_link": "https://www.qogita.com/products/4af1568db91441dabcbc292c1284ac47/clarins-eau-dynamisante-energizing-melting-body-lotion-200ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Clarins Body Firming Gel 150 Ml",
+        "product_gtin": "3666057035982",
+        "supplier_price": "€21.22",
+        "product_link": "https://www.qogita.com/products/82WZ7V/clarins-body-firming-gel-150-ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Clarins Eau Des Jardins Body Water 100ml",
+        "product_gtin": "3666057026034",
+        "supplier_price": "€25.83",
+        "product_link": "https://www.qogita.com/products/e340b8412467449ba97e96e82e1b1c3b/clarins-eau-des-jardins-body-water-100ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "La Rocheposay Anthelios Moisturizing Milk Ultra Protection Spf 50 250ml",
+        "product_gtin": "3337875761123",
+        "supplier_price": "€13.21",
+        "product_link": "https://www.qogita.com/products/FFgb8Mz5DE/la-rocheposay-anthelios-moisturizing-milk-ultra-protection-spf-50-250ml/",
+        "brand": "La Roche-Posay"
+    },
+    {
+        "product_name": "Collistar High-Definition Slimming Cream 400ml",
+        "product_gtin": "8015150252676",
+        "supplier_price": "€19.06",
+        "product_link": "https://www.qogita.com/products/Dm2egykjkt/collistar-high-definition-slimming-cream-400ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Versace Dylan Purple Pour Femme Perfumed Bath & Shower Gel - 200ml",
+        "product_gtin": "8011003876297",
+        "supplier_price": "€11.98",
+        "product_link": "https://www.qogita.com/products/NN5PDD/versace-dylan-purple-pour-femme-perfumed-bath-shower-gel-200ml/",
+        "brand": "Versace"
+    },
+    {
+        "product_name": "Vichy Homme Anti-Irritation Sensi Shave Shaving Gel For Men, 150ml",
+        "product_gtin": "3337871318895",
+        "supplier_price": "€6.92",
+        "product_link": "https://www.qogita.com/products/47Dh9tKEJv/vichy-homme-anti-irritation-sensi-shave-shaving-gel-for-men-150ml/",
+        "brand": "Vichy"
+    },
+    {
+        "product_name": "Vichy Capital Soleil Solar Derm Science Spray Spf 50 200 Ml Waterproof Body Spray",
+        "product_gtin": "3337875810869",
+        "supplier_price": "€10.76",
+        "product_link": "https://www.qogita.com/products/VW6OXR/vichy-capital-soleil-solar-derm-science-spray-spf-50-200-ml-waterproof-body-spray/",
+        "brand": "Vichy"
+    },
+    {
+        "product_name": "Bioderma Photoderm Invisible Cream Spf 50 40ml",
+        "product_gtin": "3701129803523",
+        "supplier_price": "€7.95",
+        "product_link": "https://www.qogita.com/products/DP79VL/bioderma-photoderm-invisible-cream-spf-50-40ml/",
+        "brand": "Bioderma"
+    },
+    {
+        "product_name": "Cerave Moisturising Lotion 976ML Ideal For Dry To Very Dry Skin Fragrancefree",
+        "product_gtin": "3337875598750",
+        "supplier_price": "€17.39",
+        "product_link": "https://www.qogita.com/products/EFupKkhwbX/cerave-moisturising-lotion-976ml-ideal-for-dry-to-very-dry-skin-fragrancefree/",
+        "brand": "CeraVe"
+    },
+    {
+        "product_name": "Collistar Special Perfect Body Deep Moisturizing Fluid 400ml",
+        "product_gtin": "8015150251839",
+        "supplier_price": "€9.48",
+        "product_link": "https://www.qogita.com/products/ASgnn4akpY/collistar-special-perfect-body-deep-moisturizing-fluid-400ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Collistar Special Perfect Tan Moisturizing Restructuring After Sun Balm 400ml",
+        "product_gtin": "8015150260404",
+        "supplier_price": "€12.94",
+        "product_link": "https://www.qogita.com/products/5wKUDxd72M/collistar-special-perfect-tan-moisturizing-restructuring-after-sun-balm-400ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Gillette Mach3 Blades 8 Pack",
+        "product_gtin": "7702018263783",
+        "supplier_price": "€10.59",
+        "product_link": "https://www.qogita.com/products/7VsC8iuc9h/gillette-mach3-blades-8-pack/",
+        "brand": "Gillette"
+    },
+    {
+        "product_name": "Collistar Super Tanning Dry Oil Spf 15 200ml Moisturizing Sunscreen For The Body",
+        "product_gtin": "8015150260619",
+        "supplier_price": "€12.46",
+        "product_link": "https://www.qogita.com/products/Cu7uurahFv/collistar-super-tanning-dry-oil-spf-15-200ml-moisturizing-sunscreen-for-the-body/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Bioderma Atoderm Gentle Shower Gel Nourishing Shower Gel For Dry Skin 1000ml",
+        "product_gtin": "3401399372926",
+        "supplier_price": "€7.59",
+        "product_link": "https://www.qogita.com/products/JQtFx9EWVw/bioderma-atoderm-gentle-shower-gel-nourishing-shower-gel-for-dry-skin-1000ml/",
+        "brand": "Bioderma"
+    },
+    {
+        "product_name": "Vichy Capital Soleil Cell Protect Invisible Oil Spf50 200 Ml",
+        "product_gtin": "3337875892308",
+        "supplier_price": "€10.64",
+        "product_link": "https://www.qogita.com/products/0c9df1d4e7474e1c8d30b37150eded37/vichy-capital-soleil-cell-protect-invisible-oil-spf50-200-ml/",
+        "brand": "Vichy"
+    },
+    {
+        "product_name": "Sol de Janeiro Delicia Drench Body Butter 2.50 Ounce",
+        "product_gtin": "0810912034815",
+        "supplier_price": "€12.32",
+        "product_link": "https://www.qogita.com/products/d2c7e341e002451cbd37479230fa4ce6/sol-de-janeiro-delicia-drench-body-butter-250-ounce/",
+        "brand": "Sol De Janeiro"
+    },
+    {
+        "product_name": "Elizabeth Arden Eight Hour Cream Intensive Moisturizing Hand Treatment 75ml",
+        "product_gtin": "0085805032999",
+        "supplier_price": "€8.10",
+        "product_link": "https://www.qogita.com/products/D5b3HozpK9/elizabeth-arden-hand-cream-women-75-ml/",
+        "brand": "Elizabeth Arden"
+    },
+    {
+        "product_name": "Mustela Organic Arnica & Calendula Gel 100ml",
+        "product_gtin": "3504105036409",
+        "supplier_price": "€5.38",
+        "product_link": "https://www.qogita.com/products/HCMEdMe2eB/mustela-organic-arnica-calendula-gel-100ml/",
+        "brand": "Mustela"
+    },
+    {
+        "product_name": "Clarins Eau Extraordinaire Revitalizing Silky Body Cream 200ml",
+        "product_gtin": "3666057178870",
+        "supplier_price": "€18.91",
+        "product_link": "https://www.qogita.com/products/0d1d915b00a64c6d91df2a92a4ee0167/clarins-eau-extraordinaire-revitalizing-silky-body-cream-200ml/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Jean Paul Gaultier Le Male Shower Gel 200ml",
+        "product_gtin": "8435415012751",
+        "supplier_price": "€18.87",
+        "product_link": "https://www.qogita.com/products/F3CgrDJkAw/jean-paul-gaultier-le-male-shower-gel-200ml/",
+        "brand": "Jean-Paul Gaultier"
+    },
+    {
+        "product_name": "Collistar Tanning Moisturizing Milk Spray Spf 30 200 Ml",
+        "product_gtin": "8015150262446",
+        "supplier_price": "€11.98",
+        "product_link": "https://www.qogita.com/products/QOOX34/collistar-tanning-moisturizing-milk-spray-spf-30-200-ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Collistar After Sun Fluid Soothing Refreshing 400ml Body Care After Sunbathing",
+        "product_gtin": "8015150260299",
+        "supplier_price": "€9.42",
+        "product_link": "https://www.qogita.com/products/DPhWYGgGvt/collistar-after-sun-fluid-soothing-refreshing-400ml-body-care-after-sunbathing/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Rabanne Million Gold For Her Body Lotion 200ml",
+        "product_gtin": "3349668637973",
+        "supplier_price": "€17.45",
+        "product_link": "https://www.qogita.com/products/8004e726f6b0472ab48d78f79f730ca1/rabanne-million-gold-for-her-body-lotion-200ml/",
+        "brand": "Paco Rabanne"
+    },
+    {
+        "product_name": "Collistar Super Concentrate Elasticizing Even Finish Day And Night Body Serum 200ml",
+        "product_gtin": "8015150000536",
+        "supplier_price": "€19.98",
+        "product_link": "https://www.qogita.com/products/db2afb54fe884b808b67218801515ab0/collistar-super-concentrate-elasticizing-even-finish-day-and-night-body-serum-200ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Uriage Xemose Anti-Itch Soothing Oil Balm - 500ml",
+        "product_gtin": "3661434006968",
+        "supplier_price": "€10.00",
+        "product_link": "https://www.qogita.com/products/J3pguLJCpQ/uriage-xemose-anti-itch-soothing-oil-balm-500ml/",
+        "brand": "Uriage"
+    },
+    {
+        "product_name": "Clinique Sparkle Skin Body Exfoliating Cream",
+        "product_gtin": "0020714174231",
+        "supplier_price": "€19.10",
+        "product_link": "https://www.qogita.com/products/HufLhgQcjd/clinique-sparkle-skin-body-exfoliating-cream/",
+        "brand": "Clinique"
+    },
+    {
+        "product_name": "Clinique Deep Comfort Body Cream 400ml",
+        "product_gtin": "0020714374679",
+        "supplier_price": "€18.82",
+        "product_link": "https://www.qogita.com/products/EZVavuCbK3/clinique-deep-comfort-body-lotion-400ml/",
+        "brand": "Clinique"
+    },
+    {
+        "product_name": "La Rocheposay Lipikar Gel Lavant Soothing And Protective Shower Gel 750 Ml",
+        "product_gtin": "3337872418815",
+        "supplier_price": "€10.28",
+        "product_link": "https://www.qogita.com/products/KYVQZjDSKP/la-rocheposay-lipikar-gel-lavant-soothing-and-protective-shower-gel-750-ml/",
+        "brand": "La Roche-Posay"
+    },
+    {
+        "product_name": "Bebe 1st Moisturizing Milk Moisturizing Body Milk For Children 500ml",
+        "product_gtin": "3661434008610",
+        "supplier_price": "€8.25",
+        "product_link": "https://www.qogita.com/products/9VEK21/bebe-1st-moisturizing-milk-moisturizing-body-milk-for-children-500ml/",
+        "brand": "Bebe"
+    },
+    {
+        "product_name": "Collistar Antiage Talassoscrub 700g Rejuvenating Body Scrub",
+        "product_gtin": "8015150251327",
+        "supplier_price": "€15.87",
+        "product_link": "https://www.qogita.com/products/KoVu8pm2w9/collistar-antiage-talassoscrub-700g-rejuvenating-body-scrub/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Bioderma Atoderm Mains Nourishing Hand Cream 50ml",
+        "product_gtin": "3701129804193",
+        "supplier_price": "€2.71",
+        "product_link": "https://www.qogita.com/products/3ROWPL/bioderma-atoderm-mains-nourishing-hand-cream-50ml/",
+        "brand": "Bioderma"
+    },
+    {
+        "product_name": "La Rocheposay Lipikar Huile Lavante Ap Lipidreplenishing Cleansing Oil Shower Oil 400 Ml",
+        "product_gtin": "3337875656764",
+        "supplier_price": "€10.04",
+        "product_link": "https://www.qogita.com/products/EeGZFMBWwt/la-rocheposay-lipikar-huile-lavante-ap-lipidreplenishing-cleansing-oil-shower-oil-400-ml/",
+        "brand": "La Roche-Posay"
+    },
+    {
+        "product_name": "Collistar Abdomen And Hip Remodeling Treatment Invisible Sheath Effect Firming Treatment For Abdomen And Thighs 250ml",
+        "product_gtin": "8015150253734",
+        "supplier_price": "€19.14",
+        "product_link": "https://www.qogita.com/products/W1NREX/collistar-abdomen-and-hip-remodeling-treatment-invisible-sheath-effect-firming-treatment-for-abdomen-and-thighs-250ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Uriage Xemose Pso Soothing Concentrate Body Cream 150ml",
+        "product_gtin": "3661434008955",
+        "supplier_price": "€7.08",
+        "product_link": "https://www.qogita.com/products/OORNOQ/uriage-xemose-pso-soothing-concentrate-body-cream-150ml/",
+        "brand": "Uriage"
+    },
+    {
+        "product_name": "Collistar Energizing Talasso-Scrub Body Peeling 700g",
+        "product_gtin": "8015150250337",
+        "supplier_price": "€15.87",
+        "product_link": "https://www.qogita.com/products/9yipWnYDkp/collistar-energizing-talasso-scrub-body-peeling-700g/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Nivea Creme Intense Cream 400ml",
+        "product_gtin": "8412300801072",
+        "supplier_price": "€3.49",
+        "product_link": "https://www.qogita.com/products/KMgNMAgPgE/nivea-creme-intense-cream-400ml/",
+        "brand": "Nivea"
+    },
+    {
+        "product_name": "Chloe Eau de Parfumee Shower Gel for Women 200ml",
+        "product_gtin": "0688575201956",
+        "supplier_price": "€19.78",
+        "product_link": "https://www.qogita.com/products/5VtbJuH3DY/chloe-signature-shower-gel-200ml/",
+        "brand": "Chloé"
+    },
+    {
+        "product_name": "Collistar Moisturizing Tanning Spray Spf10 - 200ml",
+        "product_gtin": "8015150260701",
+        "supplier_price": "€12.09",
+        "product_link": "https://www.qogita.com/products/9UwyskSYWp/collistar-moisturizing-tanning-spray-spf10-200ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Jean Paul Gaultier Scandal Pour Homme All Over Shower Gel 150ml",
+        "product_gtin": "8435415052368",
+        "supplier_price": "€18.69",
+        "product_link": "https://www.qogita.com/products/91ZL94/jean-paul-gaultier-scandal-pour-homme-all-over-shower-gel-150ml/",
+        "brand": "Jean Paul Gaultier"
+    },
+    {
+        "product_name": "Clarins Solaire Body Mist Spf50 Vaporizer",
+        "product_gtin": "3666057288210",
+        "supplier_price": "€14.07",
+        "product_link": "https://www.qogita.com/products/0c26050656ea4bd08092361b0542834b/clarins-solaire-body-mist-spf50-vaporizer/",
+        "brand": "Clarins"
+    },
+    {
+        "product_name": "Versace Bright Crystal Shower Gel 200ml",
+        "product_gtin": "8011003993840",
+        "supplier_price": "€12.62",
+        "product_link": "https://www.qogita.com/products/BMezNkBih4/versace-bright-crystal-shower-gel-200ml/",
+        "brand": "Versace"
+    },
+    {
+        "product_name": "Mustela Bb Stelatopia Shower Oil 500 Ml For Extremely Dry And Atopic Skin",
+        "product_gtin": "3504105034306",
+        "supplier_price": "€8.50",
+        "product_link": "https://www.qogita.com/products/KXB44cQ68q/mustela-bb-stelatopia-shower-oil-500-ml-for-extremely-dry-and-atopic-skin/",
+        "brand": "Mustela"
+    },
+    {
+        "product_name": "Eau De Rochas Woman Body Balm 500ml",
+        "product_gtin": "3386460077002",
+        "supplier_price": "€14.38",
+        "product_link": "https://www.qogita.com/products/E4o9ehsFZ4/eau-de-rochas-woman-body-balm-500ml/",
+        "brand": "Eau De Rochas"
+    },
+    {
+        "product_name": "Versace Pour Femme Dylan Turquoise Perfumed Bath Shower Gel 200ml",
+        "product_gtin": "8011003858118",
+        "supplier_price": "€11.92",
+        "product_link": "https://www.qogita.com/products/FyvpUNNbEm/versace-pour-femme-dylan-turquoise-perfumed-bath-shower-gel-200ml/",
+        "brand": "Versace"
+    },
+    {
+        "product_name": "Carolina Herrera Good Girl Body Cream 200ml",
+        "product_gtin": "8411061041802",
+        "supplier_price": "€25.40",
+        "product_link": "https://www.qogita.com/products/7a4bd41159fe4a889a3dcb3a395ee1dd/carolina-herrera-good-girl-body-cream-200ml/",
+        "brand": "Carolina Herrera"
+    },
+    {
+        "product_name": "NIVEA C Soft 300ml",
+        "product_gtin": "4005900968180",
+        "supplier_price": "€2.50",
+        "product_link": "https://www.qogita.com/products/872da5cd0434484795e0079a8b6eb55e/nivea-c-soft-300ml/",
+        "brand": "Nivea"
+    },
+    {
+        "product_name": "Victoria's Secret Coconut Passion Fragrance Mist Body Spray 8.4oz",
+        "product_gtin": "0667556605013",
+        "supplier_price": "€11.38",
+        "product_link": "https://www.qogita.com/products/1484E7/victorias-secret-coconut-passion-fragrance-mist-body-spray-beach-island-84-oz/",
+        "brand": "Victoria's Secret"
+    },
+    {
+        "product_name": "Collistar Supertanning Concentrate Unguent Spf 10 150ml",
+        "product_gtin": "8015150262491",
+        "supplier_price": "€11.98",
+        "product_link": "https://www.qogita.com/products/PP3988/collistar-supertanning-concentrate-unguent-spf-10-150ml/",
+        "brand": "Collistar"
+    },
+    {
+        "product_name": "Clinique Deep Comfort Body Butter 6.7 oz",
+        "product_gtin": "0020714139193",
+        "supplier_price": "€17.59",
+        "product_link": "https://www.qogita.com/products/6uDZhrQpAR/clinique-deep-comfort-200-ml-body-butter/",
+        "brand": "Clinique"
+    },
+    {
+        "product_name": "Mustela Gentle Shampoo 200ml",
+        "product_gtin": "3504105036126",
+        "supplier_price": "€3.69",
+        "product_link": "https://www.qogita.com/products/Q9RDN7/mustela-gentle-shampoo-200ml/",
+        "brand": "Mustela"
+    },
+    {
+        "product_name": "Biotherm Collagen Fit Body Cream - 200ml",
+        "product_gtin": "3614274472592",
+        "supplier_price": "€20.92",
+        "product_link": "https://www.qogita.com/products/3db95a3606b541b8be13bddcd9c9bcba/biotherm-collagen-fit-body-cream-200ml/",
+        "brand": "Biotherm"
+    },
+    {
+        "product_name": "Lancaster Infinite Bronze Tinted Protection Spf30 Light Tone 50ml",
+        "product_gtin": "3616304177989",
+        "supplier_price": "€12.98",
+        "product_link": "https://www.qogita.com/products/5556f4734b764dca8109e9bd99534934/lancaster-infinite-bronze-tinted-protection-spf30-light-tone-50ml/",
+        "brand": "Lancaster"
+    }
+]
