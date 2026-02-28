@@ -106,7 +106,7 @@ async def qogita_scraper():
                 product_data.append({
                     "product_name": name.get_text(strip=True),
                     "product_gtin": product_gtin,
-                    "supplier_price": price.get_text(strip=True),
+                    "supplier_price": float(price.get_text(strip=True).replace("€", "").replace(",", "")),
                     "product_link": product_link,
                     "brand": brand.get_text(strip=True)
                 })
